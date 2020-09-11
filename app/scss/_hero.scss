@@ -1,0 +1,156 @@
+.container {
+  margin: 20rem;
+  height: 17rem;
+  width: 45.625rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffff;
+
+  @include breakpoint-down(small) {
+    margin: 1rem;
+    height: 32.1875rem;
+    width: 20.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__photo {
+    img {
+      height: 17rem;
+
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+
+      @include breakpoint-down(small) {
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 0rem;
+        border-radius: none;
+        height: 14.625rem;
+        width: 20.5rem;
+      }
+    }
+  }
+
+  &__card {
+    flex-direction: column;
+  }
+
+  &__copy {
+    padding: 1.8rem;
+
+    @include breakpoint-down(small) {
+      padding: 1.625rem 1rem;
+      color: $veryDarkGrayishBlue;
+    }
+    p {
+      padding-top: 1rem;
+      font-size: 0.625rem;
+      color: $grayishBlue;
+
+      @include breakpoint-down(small) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .button {
+    display: flex;
+
+    justify-content: space-evenly;
+    font-size: 0.8rem;
+    text-align: start;
+
+    img {
+      height: 2.625rem;
+      border-radius: 1.2rem;
+      margin-left: 1rem;
+    }
+
+    &__copy {
+      padding-right: 4rem;
+      display: flex;
+      flex-direction: column;
+      margin-right: 5rem;
+
+      @include breakpoint-down(small) {
+        margin: 0rem;
+        margin-bottom: 2rem;
+      }
+      p {
+        padding-top: 0.2rem;
+        color: $grayishBlue;
+      }
+    }
+
+    &__share {
+      background-color: $lightGrayishBlue;
+      border-radius: 50px;
+      height: 2rem;
+      width: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      @include breakpoint-down(small) {
+        margin: 1.5rem;
+        z-index: 2;
+        margin-top: 1.5rem;
+      }
+
+      img {
+        height: 0.8rem;
+        margin-right: 1rem;
+
+        @include breakpoint-down(small) {
+        }
+      }
+    }
+
+    .button__popup {
+      position: absolute;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      border-radius: 1rem;
+      position: absolute;
+      height: 3rem;
+      width: 12rem;
+      background-color: $veryDarkGrayishBlue;
+      transform: translate(10rem, -3.5rem);
+
+      @include breakpoint-down(small) {
+        border-radius: 0;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        width: 20.5rem;
+        height: 5rem;
+        transform: translate(0rem);
+        z-index: 1;
+        padding-right: 6em;
+      }
+
+      img {
+        height: 1rem;
+
+        @include breakpoint-down(small) {
+          height: 1.5rem;
+        }
+      }
+    }
+    .button__popup::after {
+      content: "";
+      position: absolute;
+      height: 0rem;
+      width: 0rem;
+      transform: translate(0.5rem, 1.7rem);
+      border-top: solid 0.5rem $veryDarkGrayishBlue;
+      border-left: solid 0.5rem transparent;
+      border-right: solid 0.5rem transparent;
+    }
+  }
+}
